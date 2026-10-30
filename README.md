@@ -1,4 +1,4 @@
-# react-exercises
+# react-exercises-JoaoOliveira
 
 Repositório de exercícios de React para a turma. O repositório começa vazio de propósito: o primeiro exercício é criar o projeto com Vite.
 
