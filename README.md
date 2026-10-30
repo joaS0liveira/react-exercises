@@ -1,58 +1,35 @@
-# react-exercises-JoaoOliveira
+# React + TypeScript + Vite
 
-Repositório de exercícios de React para a turma. O repositório começa vazio de propósito: o primeiro exercício é criar o projeto com Vite.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Estrutura de um exercício
+Currently, two official plugins are available:
 
-Cada exercício possui sua própria pasta na raiz do projeto, contendo dois arquivos Markdown:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- `INSTRUCTIONS.md` — enunciado, requisitos e passos a seguir.
-- `RESULT.md` — onde você registra, com suas próprias palavras, o que fez, as dificuldades e o que aprendeu.
+## React Compiler
 
-A localização dos demais arquivos e a estrutura do projeto são definidas no enunciado de cada exercício.
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-## Regras
+Note: This will impact Vite dev & build performances.
+You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
 
-1. Um `push` deve ser relativo a um único exercício (pode conter vários commits, mas um único push por exercício).
-2. Sempre execute `npm run build` antes de commitar e fazer push.
-3. O `RESULT.md` deve descrever com suas próprias palavras como chegou no resultado, quais foram as dificuldades e o que aprendeu. Não use IA para gerar esse resumo — no máximo para correções ortográficas.
-4. Um exercício pode depender da conclusão de um anterior (os requisitos estarão descritos no `INSTRUCTIONS.md`).
+## Expanding the Oxlint configuration
 
-## Como começar
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-1. Clone este repositório.
-2. Leia o `INSTRUCTIONS.md` do próximo exercício disponível.
-3. Siga as instruções e preencha o `RESULT.md`.
-4. Rode `npm run build`.
-5. Commit e push.
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
 
----
-
-# react-exercises (English)
-
-Repository of React exercises for the class. The repository starts empty on purpose: the first exercise is creating the project with Vite.
-
-## Structure of an exercise
-
-Each exercise has its own folder at the project root, containing two Markdown files:
-
-- `INSTRUCTIONS.md` — statement, requirements and steps to follow.
-- `RESULT.md` — where you record, in your own words, what you did, the difficulties and what you learned.
-
-The location of the other files and the project structure are defined in each exercise's statement.
-
-## Rules
-
-1. A `push` must be relative to a single exercise (it may contain several commits, but a single push per exercise).
-2. Always run `npm run build` before committing and pushing.
-3. The `RESULT.md` must describe, in your own words, how you reached the result, the difficulties and what you learned. Do not use AI to generate this summary — at most for spelling corrections.
-4. An exercise may depend on the completion of a previous one (the requirements will be described in `INSTRUCTIONS.md`).
-
-## How to start
-
-1. Clone this repository.
-2. Read the `INSTRUCTIONS.md` of the next available exercise.
-3. Follow the instructions and fill in `RESULT.md`.
-4. Run `npm run build`.
-5. Commit and push.
-
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
