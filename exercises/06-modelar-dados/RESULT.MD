@@ -5,7 +5,7 @@
 
 ## Dificuldades encontradas
 <!-- Quais problemas ou erros apareceram durante o exercício? -->
-
+colocar o site apresentavel com a informaçao posta
 ## O que aprendi
 <!-- O que você aprendeu com este exercício? -->
 
@@ -16,3 +16,4 @@
 
 ## Autoavaliação
 <!-- De 1 a 5, como você avalia seu desempenho neste exercício? Por quê? -->
+4

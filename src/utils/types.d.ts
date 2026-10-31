@@ -1,15 +1,16 @@
-interface UserGreetingProps {
-    user: User
-}
+export type ButtonVariant = "warning" | "danger" | "info" | "success";
 
-export default function UserGreeting({ user }: UserGreetingProps) {
-    
-    if (!user) {
-        return <h1>Olá, Anónimo</h1>
-    }
-    return <>
-        <div className="bg-red-500 p-4">
-            <h1>Olá,{user.prefix} {user.primeiro} {user.ultimo}</h1>
-        </div>
-    </>
+type TripStatus = "on-time" | "delayed" | "cancelled"
+
+interface Trip {
+    id: string
+    origin: string
+    destination: string
+    departureDate: string
+    arrivalDate: string
+    price: number
+    hasWifi: boolean
+    hasOutlets: boolean
+    almostFull: boolean
+    status: TripStatus
 }
