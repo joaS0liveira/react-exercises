@@ -1,4 +1,4 @@
-nterface PageTitleProps {
+interface PageTitleProps {
     title: string
 }
 

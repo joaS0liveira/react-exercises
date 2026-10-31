@@ -18,7 +18,8 @@ export default function App() {
   }
 
   return (
-   <PageTitle title="Painel de Partidas" />
+    <>
+      <PageTitle title="Painel de Partidas" />
     <div className="p-8 bg-neutral-100 min-h-screen">
       <Card>
         <h1 className="text-xl font-bold">{trip.origin} - {trip.destination}</h1>
@@ -40,5 +41,6 @@ export default function App() {
         <WiFiRouterLinearIcon size={32}  color="#1e3a8a" />
       </div>
     </div>
+    </>
   )
 }
