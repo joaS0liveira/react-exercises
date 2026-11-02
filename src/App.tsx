@@ -1,6 +1,8 @@
 import { useState } from "react";
 import tripsJson from "../trips.json";
 import Card from "./components/card";
+import CartActions from "./components/CartActions";
+import CartPanel from "./components/CartPanel";
 import PageTitle from "./components/PageTitle";
 import Tabs from "./components/Tabs";
 import ShoppingList from "./components/ShoppingList";
@@ -123,6 +125,16 @@ export default function App() {
       <Card>
         <h2 className="text-sm font-semibold text-stone-800">Lista de compras</h2>
         <ShoppingList />
+      </Card>
+
+      <Card>
+        <h2 className="text-sm font-semibold text-stone-800">Loja</h2>
+        <CartActions />
+      </Card>
+
+      <Card>
+        <h2 className="text-sm font-semibold text-stone-800">Carrinho</h2>
+        <CartPanel />
       </Card>
     </main>
   )
