@@ -20,25 +20,16 @@ export default function Button({ children, variant }: ButtonProps) {
     const danger = 'bg-red-300 text-red-700 hover:bg-red-400/60'
     const normal = 'bg-stone-300 text-stone-700 hover:bg-stone-400/60'
 
-    function handleVariant(variant: string | undefined) {
-        if (variant === "success") {
-            return success
-        }
-        if (variant === "warning") {
-            return warning
-        }
-        if (variant === "info") {
-            return info
-        }
-        if (variant === "danger") {
-            return danger
-        }
-        return normal
+    //LOGICA: desço pelas opções até chegar no normal, que é o valor quando a variant vem vazia
+    const variantClass = variant === "success" ? success
+        : variant === "warning" ? warning
+        : variant === "info" ? info
+        : variant === "danger" ? danger
+        : normal
 
-    }
     return (
         <>
-            <button className={`${handleVariant(variant)} rounded-md px-2 py-1 text-sm font-medium hover:cursor-pointer transition-all`}>
+            <button className={`${variantClass} rounded-md px-2 py-1 text-sm font-medium hover:cursor-pointer transition-all`}>
                 {children}
             </button>
         </>
