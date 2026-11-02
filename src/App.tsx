@@ -2,6 +2,7 @@ import { useState } from "react";
 import tripsJson from "../trips.json";
 import Card from "./components/card";
 import CartActions from "./components/CartActions";
+import CartBadge from "./components/CartBadge";
 import CartPanel from "./components/CartPanel";
 import PageTitle from "./components/PageTitle";
 import Tabs from "./components/Tabs";
@@ -109,7 +110,10 @@ export default function App() {
 
   return (
     <main className="flex flex-col gap-4 p-4">
-      <PageTitle title="Painel de Partidas" />
+      <div className="flex items-center justify-between">
+        <PageTitle title="Painel de Partidas" />
+        <CartBadge />
+      </div>
 
       <TripFilter value={panel.filterValue} onChange={handleChangeFilter} />
 
