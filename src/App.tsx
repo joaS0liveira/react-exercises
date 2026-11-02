@@ -3,6 +3,7 @@ import tripsJson from "../trips.json";
 import Card from "./components/card";
 import PageTitle from "./components/PageTitle";
 import Tabs from "./components/Tabs";
+import ShoppingList from "./components/ShoppingList";
 import TripFilter from "./components/TripFilter";
 import TripList from "./components/TripList";
 import { formatEstimatedTime, formatDate, formatHour, getEstimatedMinutes } from "./utils/time";
@@ -117,6 +118,11 @@ export default function App() {
       <Card>
         <h2 className="text-sm font-semibold text-stone-800">Resumo da seleção</h2>
         {renderSummary()}
+      </Card>
+
+      <Card>
+        <h2 className="text-sm font-semibold text-stone-800">Lista de compras</h2>
+        <ShoppingList />
       </Card>
     </main>
   )
