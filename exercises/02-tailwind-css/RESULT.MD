@@ -2,10 +2,11 @@
 
 ## O que fiz
 <!-- Descreva, com suas próprias palavras, o que você fez neste exercício. -->
+instalei o tailwind
 
 ## Dificuldades encontradas
 <!-- Quais problemas ou erros apareceram durante o exercício? -->
-
+nao escrevi uma virgula..
 ## O que aprendi
 <!-- O que você aprendeu com este exercício? -->
 
@@ -16,3 +17,4 @@
 
 ## Autoavaliação
 <!-- De 1 a 5, como você avalia seu desempenho neste exercício? Por quê? -->
+5 sem erros drasticos

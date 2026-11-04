@@ -4,92 +4,87 @@ import Card from "./components/card";
 import CartActions from "./components/CartActions";
 import CartBadge from "./components/CartBadge";
 import CartPanel from "./components/CartPanel";
-import PageTitle from "./components/PageTitle";
+import PageTitle from "./components/pageTitle";
 import Tabs from "./components/Tabs";
 import ShoppingList from "./components/ShoppingList";
 import TripFilter from "./components/TripFilter";
 import TripList from "./components/TripList";
 import { formatEstimatedTime, formatDate, formatHour, getEstimatedMinutes } from "./utils/time";
 
-//LOGICA: o JSON vem com status: string, então digo ao TS que as linhas batem com o nosso tipo Trip
-const allTrips = tripsJson as Trip[]
+// LOGICA: o JSON vem com status: string, então digo ao TS que as linhas batem com o nosso tipo Trip
+const allTrips = tripsJson as Trip[];
 
-//LOGICA: os três estados do painel vivem juntos num state só
+// LOGICA: os três estados do painel vivem juntos num state só
 interface PanelState {
-  activeTab: "partidas" | "chegadas",
-  selectedTripId: string | null,
-  filterValue: string
+  activeTab: "partidas" | "chegadas";
+  selectedTripId: string | null;
+  filterValue: string;
 }
 
 export default function App() {
-
   const [panel, setPanel] = useState<PanelState>({
     activeTab: "partidas",
     selectedTripId: null,
-    filterValue: ""
-  })
+    filterValue: "",
+  });
 
   // Passo 1: separo as viagens nos dois grupos, sempre a partir do Porto
-  const partidas = allTrips.filter((trip) => trip.origin === "Porto")
-  const chegadas = allTrips.filter((trip) => trip.destination === "Porto")
+  const partidas = allTrips.filter((trip) => trip.origin === "Porto");
+  const chegadas = allTrips.filter((trip) => trip.destination === "Porto");
 
   // Passo 2: dentro do grupo, filtro ainda pela cidade escrita no input
   function matchesCity(trip: Trip) {
     if (panel.filterValue === "") {
-      return true
+      return true;
     }
 
-    const city = panel.filterValue.toLowerCase()
+    const city = panel.filterValue.toLowerCase();
 
-    return trip.destination.toLowerCase().includes(city) || trip.origin.toLowerCase().includes(city)
+    return trip.destination.toLowerCase().includes(city) || trip.origin.toLowerCase().includes(city);
   }
 
-  const partidasFiltered = partidas.filter(matchesCity)
-  const chegadasFiltered = chegadas.filter(matchesCity)
+  const partidasFiltered = partidas.filter(matchesCity);
+  const chegadasFiltered = chegadas.filter(matchesCity);
 
-  //LOGICA: clicar na viagem selecionada outra vez retira a seleção
+  // LOGICA: clicar na viagem selecionada outra vez retira a seleção
   function handleSelect(id: string) {
     setPanel(function (prev) {
-      const nextTripId = prev.selectedTripId === id ? null : id
-      return { ...prev, selectedTripId: nextTripId }
-    })
+      const nextTripId = prev.selectedTripId === id ? null : id;
+      return { ...prev, selectedTripId: nextTripId };
+    });
   }
 
   function handleChangeTab(tab: string) {
     setPanel(function (prev) {
-      return { ...prev, activeTab: tab as PanelState["activeTab"] }
-    })
+      return { ...prev, activeTab: tab as PanelState["activeTab"] };
+    });
   }
 
   function handleChangeFilter(value: string) {
     setPanel(function (prev) {
-      return { ...prev, filterValue: value }
-    })
+      return { ...prev, filterValue: value };
+    });
   }
 
-  //LOGICA: cada tab é um item desta lista; para acrescentar uma tab nova é só pôr mais um aqui
+  // LOGICA: cada tab é um item desta lista; para acrescentar uma tab nova é só pôr mais um aqui
   const tabs = [
     {
       key: "partidas",
       label: "Partidas",
-      content: <TripList trips={partidasFiltered} selectedTripId={panel.selectedTripId} onSelect={handleSelect} />
+      content: <TripList trips={partidasFiltered} selectedTripId={panel.selectedTripId} onSelect={handleSelect} />,
     },
     {
       key: "chegadas",
       label: "Chegadas",
-      content: <TripList trips={chegadasFiltered} selectedTripId={panel.selectedTripId} onSelect={handleSelect} />
-    }
-  ]
+      content: <TripList trips={chegadasFiltered} selectedTripId={panel.selectedTripId} onSelect={handleSelect} />,
+    },
+  ];
 
-  //LOGICA: o resumo só mostra dados quando a viagem selecionada está na lista da tab atual
+  // LOGICA: o resumo só mostra dados quando a viagem selecionada está na lista da tab atual
   function renderSummary() {
-    // Passo 1: escolho a lista da tab atual
-    const currentList = panel.activeTab === "partidas" ? partidasFiltered : chegadasFiltered
+    const currentList = panel.activeTab === "partidas" ? partidasFiltered : chegadasFiltered;
+    const selectedTrip = currentList.find((trip) => trip.id === panel.selectedTripId);
 
-    // Passo 2: procuro a viagem pelo id
-    const selectedTrip = currentList.find((trip) => trip.id === panel.selectedTripId)
-
-    // Passo 3: se não há seleção, ou o filtro tirou a viagem da lista, não há resumo para mostrar
     return selectedTrip === undefined ? (
       <p className="text-sm text-stone-500">Nenhuma viagem selecionada.</p>
     ) : (
@@ -105,7 +100,7 @@ export default function App() {
         </span>
         <span className="text-sm font-semibold text-stone-800">{selectedTrip.price.toFixed(2)} €</span>
       </div>
-    )
+    );
   }
 
   return (
@@ -141,5 +136,5 @@ export default function App() {
         <CartPanel />
       </Card>
     </main>
-  )
+  );
 }

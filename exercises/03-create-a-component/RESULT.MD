@@ -2,7 +2,7 @@
 
 ## O que fiz
 <!-- Descreva, com suas próprias palavras, o que você fez neste exercício. -->
-
+criei um componente chamado cards 
 ## Dificuldades encontradas
 <!-- Quais problemas ou erros apareceram durante o exercício? -->
 
@@ -16,3 +16,4 @@
 
 ## Autoavaliação
 <!-- De 1 a 5, como você avalia seu desempenho neste exercício? Por quê? -->
+5

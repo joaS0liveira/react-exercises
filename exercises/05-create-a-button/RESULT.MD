@@ -5,10 +5,10 @@
 
 ## Dificuldades encontradas
 <!-- Quais problemas ou erros apareceram durante o exercício? -->
-
+erro a escrever no codigo 
 ## O que aprendi
 <!-- O que você aprendeu com este exercício? -->
-
+a colocar o button a trabalhar com diferesntes cores 
 ## 3 coisas que poderia ter feito para suprir as dificuldades
 1. 
 2. 
@@ -16,3 +16,4 @@
 
 ## Autoavaliação
 <!-- De 1 a 5, como você avalia seu desempenho neste exercício? Por quê? -->
+4
