@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@solar-icons/react": "^2.3.3",
-    "@tailwindcss/vite": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.4",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "tailwindcss": "^4.3.3",
+    "tailwindcss": "^4.3.4",
     "zustand": "^5.0.16"
   },
   "devDependencies": {
