@@ -5,6 +5,7 @@ import CartActions from "./components/CartActions";
 import CartBadge from "./components/CartBadge";
 import CartPanel from "./components/CartPanel";
 import PageTitle from "./components/pageTitle";
+import RegisterForm from "./components/RegisterForm";
 import Tabs from "./components/Tabs";
 import ShoppingList from "./components/ShoppingList";
 import TripFilter from "./components/TripFilter";
@@ -134,6 +135,11 @@ export default function App() {
       <Card>
         <h2 className="text-sm font-semibold text-stone-800">Carrinho</h2>
         <CartPanel />
+      </Card>
+
+      <Card>
+        <h2 className="text-sm font-semibold text-stone-800">Registo</h2>
+        <RegisterForm />
       </Card>
     </main>
   );

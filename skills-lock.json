@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "react-hook-form-zod": {
+      "source": "secondsky/claude-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/react-hook-form-zod/skills/react-hook-form-zod/SKILL.md",
+      "computedHash": "1fd2f31208d291b1d8cfb59cab4f3e227e47a56bbcf1679d238bcc1d8b547df3"
+    }
+  }
+}
